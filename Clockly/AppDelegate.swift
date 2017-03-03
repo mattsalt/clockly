@@ -11,16 +11,40 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
-
+    let statusItem = NSStatusBar.system().statusItem(withLength: -2)
+    
+    let popover = NSPopover()
+    
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        if let button = statusItem.button {
+            button.image = NSImage(named: "StatusBarButtonImage")
+            //Declaring an action
+            button.action = #selector(AppDelegate.togglePopover(sender:))
+            
+            popover.contentViewController = PopoverViewController(nibName: "PopoverViewController", bundle: nil)
+
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
 
+    func togglePopover(sender: AnyObject) {
+        if popover.isShown{
+            popover.performClose(sender)
+        }else{
+            if let button = statusItem.button {
+                popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+                let monitor = NSEvent.addGlobalMonitorForEvents(matching: .leftMouseDown, handler: { (mouseEvent: NSEvent?)
+                    in
+                    self.popover.performClose(sender)
+                })
+                
+            }
+        }
+    }
 
     // MARK: - Core Data stack
     

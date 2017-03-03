@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -654,7 +655,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="TableTest" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Clockly" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -680,7 +681,7 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="TableTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Clockly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="234" height="345"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -689,7 +690,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="234" height="272"/>
                                 <clipView key="contentView" id="tHe-mN-OVh">
                                     <rect key="frame" x="1" y="1" width="232" height="270"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="50" rowSizeStyle="automatic" viewBased="YES" id="TGe-WL-4C4">
                                             <rect key="frame" x="0.0" y="0.0" width="232" height="270"/>
@@ -711,7 +712,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="clockCell" id="Sb0-iD-645" customClass="ClockCell" customModule="TableTest" customModuleProvider="target">
+                                                        <tableCellView identifier="clockCell" id="Sb0-iD-645" customClass="ClockCell" customModule="Clockly" customModuleProvider="target">
                                                             <rect key="frame" x="1" y="1" width="229" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -763,7 +764,6 @@
                                                                 <constraint firstAttribute="trailing" secondItem="GDi-rv-FcU" secondAttribute="trailing" constant="8" id="u6x-AS-Y0a"/>
                                                             </constraints>
                                                             <connections>
-                                                                <outlet property="deleteButton" destination="b4b-dq-taX" id="iXe-DT-BQv"/>
                                                                 <outlet property="detailLabel" destination="ruL-rP-ndJ" id="S9s-JL-FgL"/>
                                                                 <outlet property="timeField" destination="uDL-TS-nNk" id="oRr-Bf-mBg"/>
                                                                 <outlet property="timezoneLabel" destination="GDi-rv-FcU" id="81x-g5-7oX"/>

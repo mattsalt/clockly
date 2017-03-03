@@ -15,6 +15,8 @@
 		341993E71E695FB6005274BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 341993DF1E695FB6005274BD /* Assets.xcassets */; };
 		341993E81E695FB6005274BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341993E01E695FB6005274BD /* AppDelegate.swift */; };
 		341993EC1E696023005274BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 341993EA1E696023005274BD /* Main.storyboard */; };
+		341993EF1E696225005274BD /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341993ED1E696225005274BD /* PopoverViewController.swift */; };
+		341993F01E696225005274BD /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341993EE1E696225005274BD /* PopoverViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		341993DF1E695FB6005274BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Clockly/Assets.xcassets; sourceTree = "<group>"; };
 		341993E01E695FB6005274BD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Clockly/AppDelegate.swift; sourceTree = "<group>"; };
 		341993EB1E696023005274BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Clockly/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		341993ED1E696225005274BD /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopoverViewController.swift; path = Clockly/PopoverViewController.swift; sourceTree = "<group>"; };
+		341993EE1E696225005274BD /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopoverViewController.xib; path = Clockly/PopoverViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,9 @@
 		341993E91E695FD2005274BD /* Clockly */ = {
 			isa = PBXGroup;
 			children = (
+				341993E01E695FB6005274BD /* AppDelegate.swift */,
+				341993ED1E696225005274BD /* PopoverViewController.swift */,
+				341993EE1E696225005274BD /* PopoverViewController.xib */,
 				341993EA1E696023005274BD /* Main.storyboard */,
 				341993D81E695FB6005274BD /* ViewController.swift */,
 				341993D91E695FB6005274BD /* Model.xcdatamodeld */,
@@ -66,7 +73,6 @@
 				341993DC1E695FB6005274BD /* ClockCell.swift */,
 				341993DD1E695FB6005274BD /* Clock.swift */,
 				341993DF1E695FB6005274BD /* Assets.xcassets */,
-				341993E01E695FB6005274BD /* AppDelegate.swift */,
 			);
 			name = Clockly;
 			sourceTree = "<group>";
@@ -130,6 +136,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				341993F01E696225005274BD /* PopoverViewController.xib in Resources */,
 				341993EC1E696023005274BD /* Main.storyboard in Resources */,
 				341993E31E695FB6005274BD /* Info.plist in Resources */,
 				341993E71E695FB6005274BD /* Assets.xcassets in Resources */,
@@ -147,6 +154,7 @@
 				341993E51E695FB6005274BD /* Clock.swift in Sources */,
 				341993E21E695FB6005274BD /* Model.xcdatamodeld in Sources */,
 				341993E41E695FB6005274BD /* ClockCell.swift in Sources */,
+				341993EF1E696225005274BD /* PopoverViewController.swift in Sources */,
 				341993E81E695FB6005274BD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
