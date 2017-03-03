@@ -7,19 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		341993A51E685C69005274BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341993A41E685C69005274BD /* AppDelegate.swift */; };
-		341993A71E685C69005274BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341993A61E685C69005274BD /* ViewController.swift */; };
-		341993A91E685C69005274BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 341993A81E685C69005274BD /* Assets.xcassets */; };
-		341993AC1E685C69005274BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 341993AA1E685C69005274BD /* Main.storyboard */; };
+		341993E11E695FB6005274BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341993D81E695FB6005274BD /* ViewController.swift */; };
+		341993E21E695FB6005274BD /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 341993D91E695FB6005274BD /* Model.xcdatamodeld */; };
+		341993E31E695FB6005274BD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 341993DB1E695FB6005274BD /* Info.plist */; };
+		341993E41E695FB6005274BD /* ClockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341993DC1E695FB6005274BD /* ClockCell.swift */; };
+		341993E51E695FB6005274BD /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341993DD1E695FB6005274BD /* Clock.swift */; };
+		341993E71E695FB6005274BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 341993DF1E695FB6005274BD /* Assets.xcassets */; };
+		341993E81E695FB6005274BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341993E01E695FB6005274BD /* AppDelegate.swift */; };
+		341993EC1E696023005274BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 341993EA1E696023005274BD /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		341993A11E685C69005274BD /* TableTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		341993A41E685C69005274BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		341993A61E685C69005274BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		341993A81E685C69005274BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		341993AB1E685C69005274BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		341993AD1E685C69005274BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		341993A11E685C69005274BD /* Clockly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clockly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		341993D81E695FB6005274BD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Clockly/ViewController.swift; sourceTree = "<group>"; };
+		341993DA1E695FB6005274BD /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		341993DB1E695FB6005274BD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Clockly/Info.plist; sourceTree = "<group>"; };
+		341993DC1E695FB6005274BD /* ClockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClockCell.swift; path = Clockly/ClockCell.swift; sourceTree = "<group>"; };
+		341993DD1E695FB6005274BD /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Clock.swift; path = Clockly/Clock.swift; sourceTree = "<group>"; };
+		341993DF1E695FB6005274BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Clockly/Assets.xcassets; sourceTree = "<group>"; };
+		341993E01E695FB6005274BD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Clockly/AppDelegate.swift; sourceTree = "<group>"; };
+		341993EB1E696023005274BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Clockly/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,7 +43,7 @@
 		341993981E685C69005274BD = {
 			isa = PBXGroup;
 			children = (
-				341993A31E685C69005274BD /* TableTest */,
+				341993E91E695FD2005274BD /* Clockly */,
 				341993A21E685C69005274BD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,29 +51,32 @@
 		341993A21E685C69005274BD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				341993A11E685C69005274BD /* TableTest.app */,
+				341993A11E685C69005274BD /* Clockly.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		341993A31E685C69005274BD /* TableTest */ = {
+		341993E91E695FD2005274BD /* Clockly */ = {
 			isa = PBXGroup;
 			children = (
-				341993A41E685C69005274BD /* AppDelegate.swift */,
-				341993A61E685C69005274BD /* ViewController.swift */,
-				341993A81E685C69005274BD /* Assets.xcassets */,
-				341993AA1E685C69005274BD /* Main.storyboard */,
-				341993AD1E685C69005274BD /* Info.plist */,
+				341993EA1E696023005274BD /* Main.storyboard */,
+				341993D81E695FB6005274BD /* ViewController.swift */,
+				341993D91E695FB6005274BD /* Model.xcdatamodeld */,
+				341993DB1E695FB6005274BD /* Info.plist */,
+				341993DC1E695FB6005274BD /* ClockCell.swift */,
+				341993DD1E695FB6005274BD /* Clock.swift */,
+				341993DF1E695FB6005274BD /* Assets.xcassets */,
+				341993E01E695FB6005274BD /* AppDelegate.swift */,
 			);
-			path = TableTest;
+			name = Clockly;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		341993A01E685C69005274BD /* TableTest */ = {
+		341993A01E685C69005274BD /* Clockly */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 341993B01E685C69005274BD /* Build configuration list for PBXNativeTarget "TableTest" */;
+			buildConfigurationList = 341993B01E685C69005274BD /* Build configuration list for PBXNativeTarget "Clockly" */;
 			buildPhases = (
 				3419939D1E685C69005274BD /* Sources */,
 				3419939E1E685C69005274BD /* Frameworks */,
@@ -76,9 +86,9 @@
 			);
 			dependencies = (
 			);
-			name = TableTest;
+			name = Clockly;
 			productName = TableTest;
-			productReference = 341993A11E685C69005274BD /* TableTest.app */;
+			productReference = 341993A11E685C69005274BD /* Clockly.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -97,7 +107,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3419939C1E685C69005274BD /* Build configuration list for PBXProject "TableTest" */;
+			buildConfigurationList = 3419939C1E685C69005274BD /* Build configuration list for PBXProject "Clockly" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -110,7 +120,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				341993A01E685C69005274BD /* TableTest */,
+				341993A01E685C69005274BD /* Clockly */,
 			);
 		};
 /* End PBXProject section */
@@ -120,8 +130,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				341993A91E685C69005274BD /* Assets.xcassets in Resources */,
-				341993AC1E685C69005274BD /* Main.storyboard in Resources */,
+				341993EC1E696023005274BD /* Main.storyboard in Resources */,
+				341993E31E695FB6005274BD /* Info.plist in Resources */,
+				341993E71E695FB6005274BD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,18 +143,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				341993A71E685C69005274BD /* ViewController.swift in Sources */,
-				341993A51E685C69005274BD /* AppDelegate.swift in Sources */,
+				341993E11E695FB6005274BD /* ViewController.swift in Sources */,
+				341993E51E695FB6005274BD /* Clock.swift in Sources */,
+				341993E21E695FB6005274BD /* Model.xcdatamodeld in Sources */,
+				341993E41E695FB6005274BD /* ClockCell.swift in Sources */,
+				341993E81E695FB6005274BD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		341993AA1E685C69005274BD /* Main.storyboard */ = {
+		341993EA1E696023005274BD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				341993AB1E685C69005274BD /* Base */,
+				341993EB1E696023005274BD /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -246,7 +260,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = TableTest/Info.plist;
+				INFOPLIST_FILE = Clockly/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.msapps.TableTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -259,7 +273,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = TableTest/Info.plist;
+				INFOPLIST_FILE = Clockly/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.msapps.TableTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -270,7 +284,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3419939C1E685C69005274BD /* Build configuration list for PBXProject "TableTest" */ = {
+		3419939C1E685C69005274BD /* Build configuration list for PBXProject "Clockly" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				341993AE1E685C69005274BD /* Debug */,
@@ -279,15 +293,30 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		341993B01E685C69005274BD /* Build configuration list for PBXNativeTarget "TableTest" */ = {
+		341993B01E685C69005274BD /* Build configuration list for PBXNativeTarget "Clockly" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				341993B11E685C69005274BD /* Debug */,
 				341993B21E685C69005274BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		341993D91E695FB6005274BD /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				341993DA1E695FB6005274BD /* Model.xcdatamodel */,
+			);
+			currentVersion = 341993DA1E695FB6005274BD /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = Clockly/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 341993991E685C69005274BD /* Project object */;
 }

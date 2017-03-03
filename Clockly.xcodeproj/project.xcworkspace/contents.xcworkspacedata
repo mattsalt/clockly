@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TableTest.xcodeproj">
+      location = "self:/Volumes/Transcend/dev/Swift/TableTest/Clockly.xcodeproj">
    </FileRef>
 </Workspace>
