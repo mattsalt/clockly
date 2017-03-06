@@ -19,11 +19,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let button = statusItem.button {
             button.image = NSImage(named: "StatusBarButtonImage")
-            //Declaring an action
             button.action = #selector(AppDelegate.togglePopover(sender:))
             
-            popover.contentViewController = PopoverViewController(nibName: "PopoverViewController", bundle: nil)
-
+            let storyboard = NSStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateController(withIdentifier: "popoverView") as! PopoverViewController
+            popover.contentViewController = controller
         }
     }
 
