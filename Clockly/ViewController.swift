@@ -11,7 +11,6 @@ import Cocoa
 class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
 
     var clocks:[Clock] = []
-    var clockItems:[ClockItem] = []
     var timezones:[String] = []
     
     @IBOutlet weak var timeZoneSelector: NSPopUpButton!
@@ -22,10 +21,10 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         super.viewDidLoad()
         
         if let context = (NSApplication.shared().delegate as? AppDelegate)?.managedObjectContext {
-            let clockItem = ClockItem(context: context)
-            clockItem.displayName = "London"
-            clockItem.abbreviation = "GMT"
-            clockItems.append(clockItem)
+            let clock = Clock(context: context)
+            clock.displayName = "London"
+            clock.abbreviation = "GMT"
+            clocks.append(clock)
         }
         
         
@@ -35,7 +34,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         }
         getClocks()
 
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
+//        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
 
     }
     
@@ -43,11 +42,8 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         if let context = (NSApplication.shared().delegate as? AppDelegate)?.managedObjectContext{
             do {
                 clocks = []
-                let dataFetchRequest: NSFetchRequest<NSFetchRequestResult> = ClockItem.fetchRequest()
-                clockItems = try context.fetch(dataFetchRequest) as! [ClockItem]
-                for item in clockItems {
-                    clocks.append(Clock(timeZone: TimeZone(abbreviation: item.abbreviation!)!, displayName: item.displayName!)!)
-                }
+                let dataFetchRequest: NSFetchRequest<NSFetchRequestResult> = Clock.fetchRequest()
+                clocks = try context.fetch(dataFetchRequest) as! [Clock]
             }catch{}
             
         }
@@ -73,23 +69,22 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cell = tableView.make(withIdentifier: "clockCell", owner: self) as? ClockCell
         let clock = clocks[row]
-        cell?.clockItem = clockItems[row]
-        cell?.timeZone = clock.timeZone
+        cell?.timeZone = TimeZone.init(abbreviation:clock.abbreviation!)
         cell?.displayName = clock.displayName
         cell?.viewController = self
+        cell?.clock = clock
         return cell
     }
     
     @IBAction func addClicked(_ sender: Any) {
         if let zone = timeZoneSelector.titleOfSelectedItem?.components(separatedBy: " - ")[0]{
             if let context = (NSApplication.shared().delegate as? AppDelegate)?.managedObjectContext {
-                let clockItem = ClockItem(context: context)
-                clockItem.displayName = displayNameField.stringValue
-                clockItem.abbreviation = zone
-                clockItems.append(clockItem)
+                let clock = Clock(context: context)
+                clock.displayName = displayNameField.stringValue
+                clock.abbreviation = zone
+                clocks.append(clock)
                 (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
             }
-            clocks.append(Clock(timeZone: TimeZone(abbreviation: zone)!, displayName: displayNameField.stringValue)!)
             tableView.reloadData()
         }
 

@@ -13,26 +13,32 @@ class ClockManager {
 
     static func getClocks() -> [Clock]{
         var clocks:[Clock] = []
-        var clockItems:[ClockItem] = []
 
         if let context = (NSApplication.shared().delegate as? AppDelegate)?.managedObjectContext{
             do {
-                let dataFetchRequest: NSFetchRequest<NSFetchRequestResult> = ClockItem.fetchRequest()
-                clockItems = try context.fetch(dataFetchRequest) as! [ClockItem]
-                for item in clockItems {
-                    clocks.append(Clock(timeZone: TimeZone(abbreviation: item.abbreviation!)!, displayName: item.displayName!)!)
-                }
+                let dataFetchRequest: NSFetchRequest<NSFetchRequestResult> = Clock.fetchRequest()
+                clocks = try context.fetch(dataFetchRequest) as! [Clock]
             }catch{}
         }
         return clocks
     }
     
-    static func addClock(clock:Clock){
-        
+    static func addClock(abbreviation:String, displayName:String){
+        if let context = (NSApplication.shared().delegate as? AppDelegate)?.managedObjectContext {
+            let clock = Clock(context: context)
+            clock.displayName = displayName
+            clock.abbreviation = abbreviation
+            (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
+        }
     }
     
-    static func deleteClock(){
-        
+    static func deleteClock(clock:Clock){
+        if let context = (NSApplication.shared().delegate as? AppDelegate)?.managedObjectContext{
+            do {
+                context.delete(clock)
+                (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
+            }catch{}
+        }
     }
     
 }

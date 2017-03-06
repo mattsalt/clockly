@@ -18,7 +18,7 @@ class ClockCell: NSTableCellView {
     
     var timeZone:TimeZone?
     var displayName:String?
-    var clockItem:ClockItem?
+    var clock:Clock?
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -32,14 +32,7 @@ class ClockCell: NSTableCellView {
         detailLabel.stringValue = displayName!
     }
     
-    
     @IBAction func delete(_ sender: Any) {
-        if let context = (NSApplication.shared().delegate as? AppDelegate)?.managedObjectContext{
-            do {
-                context.delete(clockItem!)
-                (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
-                viewController.refresh()
-            }catch{}
-        }
+        ClockManager.deleteClock(clock: clock!)
     }
 }
