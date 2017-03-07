@@ -34,10 +34,8 @@ class ClockManager {
     
     static func deleteClock(clock:Clock){
         if let context = (NSApplication.shared().delegate as? AppDelegate)?.managedObjectContext{
-            do {
                 context.delete(clock)
                 (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
-            }catch{}
         }
     }
     

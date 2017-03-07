@@ -19,43 +19,37 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let context = (NSApplication.shared().delegate as? AppDelegate)?.managedObjectContext {
-            let clock = Clock(context: context)
-            clock.displayName = "London"
-            clock.abbreviation = "GMT"
-            clocks.append(clock)
-        }
-        
-        
         timeZoneSelector.removeAllItems()
         for (key,value) in TimeZone.abbreviationDictionary {
             timeZoneSelector.addItem(withTitle: "\(key) - \(value)")
         }
-        getClocks()
-
-//        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
-
+        clocks = getClocks()
     }
     
-    func getClocks(){
+    func getClocks() -> [Clock]{
+        var clocks:[Clock] = []
         if let context = (NSApplication.shared().delegate as? AppDelegate)?.managedObjectContext{
             do {
-                clocks = []
                 let dataFetchRequest: NSFetchRequest<NSFetchRequestResult> = Clock.fetchRequest()
                 clocks = try context.fetch(dataFetchRequest) as! [Clock]
+                if(clocks.count == 0){
+                    let clock = Clock(context: context)
+                    clock.displayName = "London"
+                    clock.abbreviation = "GMT"
+                    clocks.append(clock)
+                }
             }catch{}
-            
         }
+        return clocks
     }
     
     func tick(){
-        getClocks()
+        clocks = getClocks()
         tableView.reloadData()
     }
     
     func refresh(){
-        getClocks()
+        clocks = getClocks()
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {

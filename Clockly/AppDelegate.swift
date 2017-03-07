@@ -11,8 +11,7 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    let statusItem = NSStatusBar.system().statusItem(withLength: -2)
-    
+    let statusItem = NSStatusBar.system().statusItem(withLength: -2)    
     let popover = NSPopover()
     
     
@@ -28,7 +27,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
     }
 
     func togglePopover(sender: AnyObject) {

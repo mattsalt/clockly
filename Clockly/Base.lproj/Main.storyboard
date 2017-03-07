@@ -699,18 +699,6 @@
                                                             <rect key="frame" x="1" y="1" width="187" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uow-iu-0Il">
-                                                                    <rect key="frame" x="6" y="18" width="104" height="24"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="27" id="K80-hV-ggk"/>
-                                                                        <constraint firstAttribute="width" constant="100" id="YWR-Qj-5Wp"/>
-                                                                    </constraints>
-                                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="T1Y-AI-Eo1">
-                                                                        <font key="font" metaFont="system" size="20"/>
-                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                                    </textFieldCell>
-                                                                </textField>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NrM-tv-ddK">
                                                                     <rect key="frame" x="50" y="3" width="124" height="13"/>
                                                                     <constraints>
@@ -730,14 +718,27 @@
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Uow-iu-0Il">
+                                                                    <rect key="frame" x="1" y="18" width="104" height="24"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="1vQ-Cv-D2r"/>
+                                                                        <constraint firstAttribute="height" constant="24" id="K80-hV-ggk"/>
+                                                                        <constraint firstAttribute="width" constant="100" id="YWR-Qj-5Wp"/>
+                                                                    </constraints>
+                                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="T1Y-AI-Eo1">
+                                                                        <font key="font" metaFont="system" size="20"/>
+                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
                                                             </subviews>
                                                             <constraints>
+                                                                <constraint firstItem="Uow-iu-0Il" firstAttribute="top" secondItem="kcu-iU-mfz" secondAttribute="top" constant="8" id="2tw-wO-ZoZ"/>
                                                                 <constraint firstAttribute="trailing" secondItem="NrM-tv-ddK" secondAttribute="trailing" constant="15" id="C39-QK-cRk"/>
                                                                 <constraint firstAttribute="bottom" secondItem="NrM-tv-ddK" secondAttribute="bottom" constant="3" id="KhS-bz-Dom"/>
+                                                                <constraint firstItem="Uow-iu-0Il" firstAttribute="leading" secondItem="kcu-iU-mfz" secondAttribute="leading" constant="3" id="PiI-mz-yNL"/>
                                                                 <constraint firstItem="N4c-re-Gcx" firstAttribute="top" secondItem="kcu-iU-mfz" secondAttribute="top" constant="8" id="TKo-OV-4Zb"/>
                                                                 <constraint firstAttribute="trailing" secondItem="N4c-re-Gcx" secondAttribute="trailing" constant="15" id="Y2j-Gi-YsI"/>
-                                                                <constraint firstItem="Uow-iu-0Il" firstAttribute="leading" secondItem="kcu-iU-mfz" secondAttribute="leading" constant="8" id="bz1-sC-HeQ"/>
-                                                                <constraint firstItem="Uow-iu-0Il" firstAttribute="top" secondItem="kcu-iU-mfz" secondAttribute="top" constant="8" id="oqa-vW-JlW"/>
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="abbreviationLabel" destination="N4c-re-Gcx" id="k4x-eN-yYy"/>
@@ -774,7 +775,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="ALC-C3-mka" kind="show" id="Z81-St-Lyf"/>
+                                    <segue destination="MAm-7N-aNt" kind="show" id="wgl-ri-uJ4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -797,16 +798,34 @@
             </objects>
             <point key="canvasLocation" x="321" y="369"/>
         </scene>
-        <!--Add Clock View Controller-->
-        <scene sceneID="OLZ-Ee-2yx">
+        <!--Window Controller-->
+        <scene sceneID="OVj-ML-ddf">
             <objects>
-                <viewController storyboardIdentifier="Edit Clocks" id="ALC-C3-mka" customClass="AddClockViewController" customModule="Clockly" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="UKB-pY-h80">
-                        <rect key="frame" x="0.0" y="0.0" width="248" height="92"/>
+                <windowController id="MAm-7N-aNt" sceneMemberID="viewController">
+                    <window key="window" title="Edit Clocks" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="nn0-u1-vbS">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="268" height="139"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+                    </window>
+                    <connections>
+                        <segue destination="8mZ-Fr-puX" kind="relationship" relationship="window.shadowedContentViewController" id="CE8-6l-WhM"/>
+                    </connections>
+                </windowController>
+                <customObject id="3WH-iD-B9Y" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="321" y="735"/>
+        </scene>
+        <!--Add Clock View Controller-->
+        <scene sceneID="U2Z-YD-erh">
+            <objects>
+                <viewController id="8mZ-Fr-puX" customClass="AddClockViewController" customModule="Clockly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="eJI-XF-Jqx">
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="220"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gSa-h5-E9q">
-                                <rect key="frame" x="18" y="54" width="105" height="26"/>
+                            <popUpButton verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gSa-h5-E9q">
+                                <rect key="frame" x="18" y="176" width="105" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="teS-PH-wBK"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="z6A-KY-3O6"/>
@@ -823,44 +842,44 @@
                                     </menu>
                                 </popUpButtonCell>
                             </popUpButton>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bPz-N1-G2D">
+                                <rect key="frame" x="144" y="172" width="102" height="32"/>
+                                <buttonCell key="cell" type="push" title="Add Clock" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TV9-Vi-uCr">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="addClicked:" target="8mZ-Fr-puX" id="IFh-de-CZv"/>
+                                </connections>
+                            </button>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RHW-NI-b7b">
-                                <rect key="frame" x="20" y="20" width="218" height="22"/>
+                                <rect key="frame" x="20" y="138" width="227" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Display Name" drawsBackground="YES" id="6Cn-qs-zJ1">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bPz-N1-G2D">
-                                <rect key="frame" x="142" y="50" width="102" height="32"/>
-                                <buttonCell key="cell" type="push" title="Add Clock" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TV9-Vi-uCr">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="addClicked:" target="ALC-C3-mka" id="w3q-b5-tyM"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="bPz-N1-G2D" firstAttribute="top" secondItem="UKB-pY-h80" secondAttribute="top" constant="14" id="C3G-N2-obL"/>
-                            <constraint firstAttribute="bottom" secondItem="RHW-NI-b7b" secondAttribute="bottom" constant="20" id="HFV-Sv-kiG"/>
-                            <constraint firstItem="gSa-h5-E9q" firstAttribute="top" secondItem="UKB-pY-h80" secondAttribute="top" constant="14" id="Uqd-qR-9kL"/>
-                            <constraint firstAttribute="trailing" secondItem="RHW-NI-b7b" secondAttribute="trailing" constant="10" id="Vfc-HW-ayt"/>
-                            <constraint firstAttribute="trailing" secondItem="bPz-N1-G2D" secondAttribute="trailing" constant="10" id="XxD-gQ-IoF"/>
-                            <constraint firstItem="RHW-NI-b7b" firstAttribute="leading" secondItem="UKB-pY-h80" secondAttribute="leading" constant="20" id="aoM-2R-4GZ"/>
-                            <constraint firstItem="gSa-h5-E9q" firstAttribute="leading" secondItem="UKB-pY-h80" secondAttribute="leading" constant="20" id="iZQ-bW-eei"/>
+                            <constraint firstAttribute="bottom" secondItem="RHW-NI-b7b" secondAttribute="bottom" constant="138" id="25t-YM-tQe"/>
+                            <constraint firstItem="RHW-NI-b7b" firstAttribute="leading" secondItem="eJI-XF-Jqx" secondAttribute="leading" constant="20" id="LqI-sq-WsL"/>
+                            <constraint firstAttribute="trailing" secondItem="bPz-N1-G2D" secondAttribute="trailing" constant="95" id="XiU-sZ-P8s"/>
+                            <constraint firstAttribute="trailing" secondItem="RHW-NI-b7b" secondAttribute="trailing" constant="88" id="YiP-43-aWm"/>
+                            <constraint firstItem="gSa-h5-E9q" firstAttribute="top" secondItem="eJI-XF-Jqx" secondAttribute="top" constant="20" id="c8V-qb-L70"/>
+                            <constraint firstItem="gSa-h5-E9q" firstAttribute="leading" secondItem="eJI-XF-Jqx" secondAttribute="leading" constant="29" id="vVH-4y-JZz"/>
+                            <constraint firstItem="bPz-N1-G2D" firstAttribute="top" secondItem="eJI-XF-Jqx" secondAttribute="top" constant="20" id="xnh-6r-Rfk"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addButton" destination="bPz-N1-G2D" id="emH-Vi-o26"/>
-                        <outlet property="displayNameField" destination="RHW-NI-b7b" id="7Na-cA-KgW"/>
-                        <outlet property="timeZoneSelector" destination="gSa-h5-E9q" id="nHH-uf-2rM"/>
+                        <outlet property="addButton" destination="bPz-N1-G2D" id="K3i-yb-V3x"/>
+                        <outlet property="displayNameField" destination="RHW-NI-b7b" id="Dv0-8x-drN"/>
+                        <outlet property="timeZoneSelector" destination="gSa-h5-E9q" id="BZD-vm-64p"/>
                     </connections>
                 </viewController>
-                <customObject id="Xhh-8G-MPU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="5fC-oD-2rj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="676" y="369"/>
+            <point key="canvasLocation" x="1054.5" y="727"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">

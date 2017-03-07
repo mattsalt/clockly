@@ -69,18 +69,34 @@
 			children = (
 				341993E01E695FB6005274BD /* AppDelegate.swift */,
 				341993EA1E696023005274BD /* Main.storyboard */,
-				345369291E6D554900F43AD1 /* PopoverViewController.swift */,
-				3453692F1E6DB72C00F43AD1 /* PopoverBackgroundView.swift */,
+				345369341E6DF4A800F43AD1 /* Popover */,
+				345369331E6DF49A00F43AD1 /* Data */,
 				341993D81E695FB6005274BD /* ViewController.swift */,
-				345369311E6DE16D00F43AD1 /* AddClockViewController.swift */,
-				341993D91E695FB6005274BD /* Model.xcdatamodeld */,
-				341993DB1E695FB6005274BD /* Info.plist */,
 				341993DC1E695FB6005274BD /* ClockCell.swift */,
-				3453692B1E6D563200F43AD1 /* PopoverCell.swift */,
 				341993DF1E695FB6005274BD /* Assets.xcassets */,
-				3453692D1E6DB3CA00F43AD1 /* ClockManager.swift */,
+				341993DB1E695FB6005274BD /* Info.plist */,
 			);
 			name = Clockly;
+			sourceTree = "<group>";
+		};
+		345369331E6DF49A00F43AD1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				341993D91E695FB6005274BD /* Model.xcdatamodeld */,
+				3453692D1E6DB3CA00F43AD1 /* ClockManager.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		345369341E6DF4A800F43AD1 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				3453692B1E6D563200F43AD1 /* PopoverCell.swift */,
+				3453692F1E6DB72C00F43AD1 /* PopoverBackgroundView.swift */,
+				345369291E6D554900F43AD1 /* PopoverViewController.swift */,
+				345369311E6DE16D00F43AD1 /* AddClockViewController.swift */,
+			);
+			name = Popover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
