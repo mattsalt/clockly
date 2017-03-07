@@ -51,7 +51,7 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
     //MARK: NAVIGATION
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if segue.identifier == "showEditWindow" {
-            let controller = segue.destinationController as! AddClockViewController
+            let controller = segue.destinationController as! EditClockViewController
             controller.popoverView = self
         }
     }

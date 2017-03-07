@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		340685421E6F2B5600B4396C /* EditClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340685411E6F2B5600B4396C /* EditClockViewController.swift */; };
 		341993E11E695FB6005274BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341993D81E695FB6005274BD /* ViewController.swift */; };
 		341993E21E695FB6005274BD /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 341993D91E695FB6005274BD /* Model.xcdatamodeld */; };
 		341993E31E695FB6005274BD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 341993DB1E695FB6005274BD /* Info.plist */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		340685411E6F2B5600B4396C /* EditClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditClockViewController.swift; sourceTree = "<group>"; };
 		341993A11E685C69005274BD /* Clockly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clockly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		341993D81E695FB6005274BD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Clockly/ViewController.swift; sourceTree = "<group>"; };
 		341993DA1E695FB6005274BD /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				3453692F1E6DB72C00F43AD1 /* PopoverBackgroundView.swift */,
 				345369291E6D554900F43AD1 /* PopoverViewController.swift */,
 				345369311E6DE16D00F43AD1 /* AddClockViewController.swift */,
+				340685411E6F2B5600B4396C /* EditClockViewController.swift */,
 			);
 			name = Popover;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				345369301E6DB72C00F43AD1 /* PopoverBackgroundView.swift in Sources */,
+				340685421E6F2B5600B4396C /* EditClockViewController.swift in Sources */,
 				341993E11E695FB6005274BD /* ViewController.swift in Sources */,
 				3453692C1E6D563200F43AD1 /* PopoverCell.swift in Sources */,
 				341993E21E695FB6005274BD /* Model.xcdatamodeld in Sources */,
