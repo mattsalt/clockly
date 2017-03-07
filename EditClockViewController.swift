@@ -33,8 +33,10 @@ class EditClockViewController: NSViewController, NSTableViewDelegate, NSTableVie
     }
     
     func refresh(){
-        tableView.reloadData()
         popoverView?.reloadClocks()
+        clocks = ClockManager.getClocks()
+        tableView.reloadData()
+        
     }
     @IBAction func addClicked(_ sender: Any) {
         if let zone = timezoneSelector.titleOfSelectedItem?.components(separatedBy: " - ")[0]{
@@ -45,11 +47,15 @@ class EditClockViewController: NSViewController, NSTableViewDelegate, NSTableVie
     }
 
     @IBAction func removeClicked(_ sender: Any) {
-        
+        print(tableView.selectedRow)
+        if tableView.selectedRow > -1{
+            if(tableView.selectedRow <= clocks.count - 1){
+                ClockManager.deleteClock(clock: clocks[tableView.selectedRow])
+                refresh()
+            }
+        }
+            
     }
-    
-
-    
     
     //MARK: Table Methods
     func numberOfRows(in tableView: NSTableView) -> Int {
