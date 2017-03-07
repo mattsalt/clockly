@@ -13,6 +13,8 @@ class AddClockViewController: NSViewController {
     @IBOutlet weak var timeZoneSelector: NSPopUpButton!
     @IBOutlet weak var addButton: NSButton!
     @IBOutlet weak var displayNameField: NSTextField!
+    
+    var popoverView:PopoverViewController?
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,7 @@ class AddClockViewController: NSViewController {
     @IBAction func addClicked(_ sender: Any) {
         if let zone = timeZoneSelector.titleOfSelectedItem?.components(separatedBy: " - ")[0]{
             ClockManager.addClock(abbreviation: zone, displayName: displayNameField.stringValue)
+            popoverView?.reloadClocks()
         }
     }
 }

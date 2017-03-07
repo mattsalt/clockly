@@ -33,15 +33,30 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
         }
     }
     
+    func reloadClocks(){
+        clocks = ClockManager.getClocks()
+        tableview.reloadData()
+    }
+    
     // TURN THE TIMER ON AND OFF
     func startTimer(){
         tick()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
     }
+    
     func stopTimer(){
         timer?.invalidate()
     }
     
+    //MARK: NAVIGATION
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showEditWindow" {
+            let controller = segue.destinationController as! AddClockViewController
+            controller.popoverView = self
+        }
+    }
+    
+    //MARK: TABLE METHODS
     func numberOfRows(in tableView: NSTableView) -> Int {
         return clocks.count
     }

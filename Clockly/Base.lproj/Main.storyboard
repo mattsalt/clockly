@@ -775,7 +775,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="MAm-7N-aNt" kind="show" id="wgl-ri-uJ4"/>
+                                    <segue destination="8mZ-Fr-puX" kind="show" identifier="showEditWindow" id="vS2-hJ-vwQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -824,11 +824,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="335" height="220"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <popUpButton verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gSa-h5-E9q">
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gSa-h5-E9q">
                                 <rect key="frame" x="18" y="176" width="105" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="teS-PH-wBK"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="z6A-KY-3O6"/>
+                                    <constraint firstAttribute="width" constant="100" id="vSQ-Gj-3aG"/>
                                 </constraints>
                                 <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="sYg-h6-YCp" id="eZh-TP-YUr">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -864,10 +863,10 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="RHW-NI-b7b" secondAttribute="bottom" constant="138" id="25t-YM-tQe"/>
                             <constraint firstItem="RHW-NI-b7b" firstAttribute="leading" secondItem="eJI-XF-Jqx" secondAttribute="leading" constant="20" id="LqI-sq-WsL"/>
+                            <constraint firstItem="gSa-h5-E9q" firstAttribute="baseline" secondItem="bPz-N1-G2D" secondAttribute="baseline" id="V6s-DE-Pbc"/>
                             <constraint firstAttribute="trailing" secondItem="bPz-N1-G2D" secondAttribute="trailing" constant="95" id="XiU-sZ-P8s"/>
                             <constraint firstAttribute="trailing" secondItem="RHW-NI-b7b" secondAttribute="trailing" constant="88" id="YiP-43-aWm"/>
-                            <constraint firstItem="gSa-h5-E9q" firstAttribute="top" secondItem="eJI-XF-Jqx" secondAttribute="top" constant="20" id="c8V-qb-L70"/>
-                            <constraint firstItem="gSa-h5-E9q" firstAttribute="leading" secondItem="eJI-XF-Jqx" secondAttribute="leading" constant="29" id="vVH-4y-JZz"/>
+                            <constraint firstItem="gSa-h5-E9q" firstAttribute="leading" secondItem="RHW-NI-b7b" secondAttribute="leading" id="v6a-H6-5UA"/>
                             <constraint firstItem="bPz-N1-G2D" firstAttribute="top" secondItem="eJI-XF-Jqx" secondAttribute="top" constant="20" id="xnh-6r-Rfk"/>
                         </constraints>
                     </view>
@@ -1071,4 +1070,7 @@
             <point key="canvasLocation" x="-48" y="692.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="vS2-hJ-vwQ"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -23,6 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let storyboard = NSStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateController(withIdentifier: "popoverView") as! PopoverViewController
             popover.contentViewController = controller
+            popover.animates = false
         }
     }
 
