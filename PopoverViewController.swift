@@ -26,7 +26,6 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
         meenu = NSMenu()
         meenu?.addItem(NSMenuItem(title: "Edit Clocks",action: #selector(editClocks), keyEquivalent: ","))
         meenu?.addItem(NSMenuItem(title: "Quit Clockly",action: #selector(quit), keyEquivalent: "q"))
-        editButton.menu = meenu
         tick()
     }
     
@@ -38,6 +37,9 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
         }
     }
     
+    @IBAction func editButtonClicked(_ sender: Any) {
+        meenu?.popUp(positioning: meenu?.item(at: 0), at: NSEvent.mouseLocation(), in: nil)
+    }
     func reloadClocks(){
         clocks = ClockManager.getClocks()
         tableview.reloadData()

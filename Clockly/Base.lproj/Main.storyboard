@@ -792,6 +792,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="editButtonClicked:" target="aNp-Vz-uKk" id="Ne9-H5-G8Z"/>
+                                        </connections>
                                     </button>
                                     <slider verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwO-wC-z75">
                                         <rect key="frame" x="4" y="14" width="115" height="24"/>
