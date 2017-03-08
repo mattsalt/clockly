@@ -765,37 +765,48 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2lB-tR-b1z">
-                                <rect key="frame" x="81" y="7" width="64" height="32"/>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="56c-1m-ewR" customClass="TestView" customModule="Clockly" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="159" height="47"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O0W-a9-Isq">
+                                        <rect key="frame" x="121" y="8" width="30" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="6cV-q9-0og"/>
+                                            <constraint firstAttribute="height" constant="26" id="RAY-wi-PvW"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="settings-64" imagePosition="only" alignment="center" transparent="YES" imageScaling="proportionallyDown" inset="2" id="Jsc-ka-Y0l">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <segue destination="8mZ-Fr-puX" kind="show" identifier="showEditWindow" id="uLp-Dq-z5V"/>
+                                        </connections>
+                                    </button>
+                                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwO-wC-z75">
+                                        <rect key="frame" x="10" y="14" width="105" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <sliderCell key="cell" state="on" alignment="left" minValue="-24" maxValue="24" tickMarkPosition="above" sliderType="linear" id="5N6-fy-nhp"/>
+                                    </slider>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="52" id="cLt-1U-XSd"/>
+                                    <constraint firstAttribute="trailing" secondItem="O0W-a9-Isq" secondAttribute="trailing" constant="8" id="Hw1-iK-rPS"/>
+                                    <constraint firstAttribute="bottom" secondItem="O0W-a9-Isq" secondAttribute="bottom" constant="8" id="aWa-Ue-vh2"/>
                                 </constraints>
-                                <buttonCell key="cell" type="push" title="edit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Uxm-Dx-XFM">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                        <color key="value" red="0.53711447318507843" green="0.54441624365482233" blue="0.53309040445416533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="8mZ-Fr-puX" kind="show" identifier="showEditWindow" id="vS2-hJ-vwQ"/>
-                                </connections>
-                            </button>
+                            </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="2lB-tR-b1z" secondAttribute="trailing" constant="20" id="G1c-i6-6Cf"/>
                             <constraint firstItem="fkd-P6-0Za" firstAttribute="leading" secondItem="MJC-al-2jw" secondAttribute="leading" id="G81-DW-dQx"/>
+                            <constraint firstAttribute="trailing" secondItem="56c-1m-ewR" secondAttribute="trailing" id="GOU-wq-wxM"/>
                             <constraint firstAttribute="bottom" secondItem="fkd-P6-0Za" secondAttribute="bottom" constant="47" id="OoN-nM-cLB"/>
+                            <constraint firstItem="56c-1m-ewR" firstAttribute="leading" secondItem="MJC-al-2jw" secondAttribute="leading" id="af9-kb-0Ce"/>
+                            <constraint firstItem="56c-1m-ewR" firstAttribute="top" secondItem="fkd-P6-0Za" secondAttribute="bottom" id="c4S-RC-Hbu"/>
                             <constraint firstAttribute="trailing" secondItem="fkd-P6-0Za" secondAttribute="trailing" id="fWc-Y2-keD"/>
                             <constraint firstItem="fkd-P6-0Za" firstAttribute="top" secondItem="MJC-al-2jw" secondAttribute="top" id="jiF-TV-7Od"/>
-                            <constraint firstAttribute="bottom" secondItem="2lB-tR-b1z" secondAttribute="bottom" constant="14" id="peU-nj-GR6"/>
+                            <constraint firstAttribute="bottom" secondItem="56c-1m-ewR" secondAttribute="bottom" id="sg5-xO-bjM"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addButton" destination="2lB-tR-b1z" id="gLI-HJ-WZZ"/>
-                        <outlet property="addButtonCell" destination="Uxm-Dx-XFM" id="ehz-a5-HOd"/>
+                        <outlet property="slider" destination="gwO-wC-z75" id="o7m-SA-68J"/>
                         <outlet property="tableview" destination="es0-Ay-4yh" id="Fee-Ja-DUU"/>
                     </connections>
                 </viewController>
@@ -989,7 +1000,10 @@
                 </viewController>
                 <customObject id="5fC-oD-2rj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16" y="650"/>
+            <point key="canvasLocation" x="322" y="823"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings-64" width="384" height="384"/>
+    </resources>
 </document>

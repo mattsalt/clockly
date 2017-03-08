@@ -10,10 +10,9 @@ import Cocoa
 
 class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
 
-    @IBOutlet weak var addButton: NSButton!
     @IBOutlet weak var tableview: NSTableView!
 
-    @IBOutlet weak var addButtonCell: NSButtonCell!
+    @IBOutlet weak var slider: NSSlider!
     var clocks:[Clock] = []
     var timer:Timer?
     var popover:NSPopover?
