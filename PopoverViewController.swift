@@ -26,6 +26,7 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
         meenu = NSMenu()
         meenu?.addItem(NSMenuItem(title: "Edit Clocks",action: #selector(editClocks), keyEquivalent: ","))
         meenu?.addItem(NSMenuItem(title: "Quit Clockly",action: #selector(quit), keyEquivalent: "q"))
+        editButton.menu = meenu
         tick()
     }
     
