@@ -782,10 +782,14 @@
                                             <segue destination="8mZ-Fr-puX" kind="show" identifier="showEditWindow" id="uLp-Dq-z5V"/>
                                         </connections>
                                     </button>
-                                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwO-wC-z75">
-                                        <rect key="frame" x="10" y="14" width="105" height="19"/>
+                                    <slider verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwO-wC-z75">
+                                        <rect key="frame" x="10" y="14" width="105" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <sliderCell key="cell" state="on" alignment="left" minValue="-24" maxValue="24" tickMarkPosition="above" sliderType="linear" id="5N6-fy-nhp"/>
+                                        <sliderCell key="cell" state="on" alignment="left" minValue="-24" maxValue="24" tickMarkPosition="above" numberOfTickMarks="3" sliderType="linear" id="5N6-fy-nhp">
+                                            <connections>
+                                                <action selector="sliderChanged:" target="aNp-Vz-uKk" id="roP-2b-ds9"/>
+                                            </connections>
+                                        </sliderCell>
                                     </slider>
                                 </subviews>
                                 <constraints>

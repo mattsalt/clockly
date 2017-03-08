@@ -33,8 +33,10 @@ class PopoverCell: NSTableCellView {
         descriptionLabel.stringValue = displayName
     }
     
-    func tick(){
-        let date = Date()
+    func tick(adjustment: Int){
+        var date = Date()
+        let timeInterval:TimeInterval = Double(adjustment) * 60.0 * 60.0
+        date = date.addingTimeInterval(timeInterval)
         timeLabel.stringValue = dateFormatter.string(from: date)
     }
     
