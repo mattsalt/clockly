@@ -17,9 +17,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let button = statusItem.button {
-            button.image = NSImage(named: "StatusBarButtonImage")
+            button.image = NSImage(named: "clock-with-white-face-32")
             button.action = #selector(AppDelegate.togglePopover(sender:))
-            
             let storyboard = NSStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateController(withIdentifier: "popoverView") as! PopoverViewController
             popover.contentViewController = controller

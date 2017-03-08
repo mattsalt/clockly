@@ -47,7 +47,6 @@ class EditClockViewController: NSViewController, NSTableViewDelegate, NSTableVie
     }
 
     @IBAction func removeClicked(_ sender: Any) {
-        print(tableView.selectedRow)
         if tableView.selectedRow > -1{
             if(tableView.selectedRow <= clocks.count - 1){
                 ClockManager.deleteClock(clock: clocks[tableView.selectedRow])
@@ -63,8 +62,6 @@ class EditClockViewController: NSViewController, NSTableViewDelegate, NSTableVie
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        
-        
         if tableColumn?.identifier == "timezone" {
             if let cell = tableView.make(withIdentifier: "timezone", owner: self) as? NSTableCellView{
                 cell.textField?.stringValue = clocks[row].abbreviation!
