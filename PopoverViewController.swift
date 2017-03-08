@@ -12,15 +12,21 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
 
     @IBOutlet weak var tableview: NSTableView!
 
+    @IBOutlet weak var editButton: NSButton!
     @IBOutlet weak var slider: NSSlider!
     var clocks:[Clock] = []
     var timer:Timer?
     var popover:NSPopover?
+    var meenu:NSMenu?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         clocks = ClockManager.getClocks()
         tableview.backgroundColor = NSColor.white
+        meenu = NSMenu()
+        meenu?.addItem(NSMenuItem(title: "Edit Clocks",action: #selector(editClocks), keyEquivalent: ","))
+        meenu?.addItem(NSMenuItem(title: "Quit Clockly",action: #selector(quit), keyEquivalent: "q"))
+        editButton.menu = meenu
         tick()
     }
     
@@ -76,5 +82,12 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
         cell?.timezone = TimeZone.init(abbreviation:clock.abbreviation!)
         cell?.displayName = clock.displayName!
         return cell
+    }
+    func editClocks(){
+        performSegue(withIdentifier: "showEditWindow", sender: self)
+    }
+    
+    func quit(){
+        NSApplication.shared().terminate(self)
     }
 }

@@ -792,9 +792,6 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <connections>
-                                            <segue destination="8mZ-Fr-puX" kind="show" identifier="showEditWindow" id="uLp-Dq-z5V"/>
-                                        </connections>
                                     </button>
                                     <slider verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwO-wC-z75">
                                         <rect key="frame" x="4" y="14" width="115" height="24"/>
@@ -824,8 +821,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="editButton" destination="O0W-a9-Isq" id="0YZ-nH-eMz"/>
                         <outlet property="slider" destination="gwO-wC-z75" id="o7m-SA-68J"/>
                         <outlet property="tableview" destination="es0-Ay-4yh" id="Fee-Ja-DUU"/>
+                        <segue destination="8mZ-Fr-puX" kind="show" identifier="showEditWindow" id="ewU-Ut-IuU"/>
                     </connections>
                 </viewController>
                 <customObject id="Inl-hY-JH5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
