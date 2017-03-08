@@ -21,6 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.action = #selector(AppDelegate.togglePopover(sender:))
             let storyboard = NSStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateController(withIdentifier: "popoverView") as! PopoverViewController
+            controller.popover = popover
             popover.contentViewController = controller
             popover.animates = false
         }

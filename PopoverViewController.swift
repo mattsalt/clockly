@@ -16,6 +16,7 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
     @IBOutlet weak var addButtonCell: NSButtonCell!
     var clocks:[Clock] = []
     var timer:Timer?
+    var popover:NSPopover?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,7 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
     //MARK: NAVIGATION
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if segue.identifier == "showEditWindow" {
+            popover?.performClose(self)
             let controller = segue.destinationController as! EditClockViewController
             controller.popoverView = self
         }

@@ -53,7 +53,6 @@ class EditClockViewController: NSViewController, NSTableViewDelegate, NSTableVie
                 refresh()
             }
         }
-            
     }
     
     //MARK: Table Methods
