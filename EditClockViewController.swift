@@ -43,6 +43,7 @@ class EditClockViewController: NSViewController, NSTableViewDelegate, NSTableVie
             ClockManager.addClock(abbreviation: zone, displayName: displayNameField.stringValue)
         }
         clocks = ClockManager.getClocks()
+        displayNameField.stringValue = ""
         refresh()
     }
 

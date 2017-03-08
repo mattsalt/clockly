@@ -27,7 +27,7 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
     func tick(){
         for (index, _) in clocks.enumerated() {
             if let cell = tableview.view(atColumn: 0, row: index, makeIfNecessary: false) as? PopoverCell{
-                cell.tick(adjustment: slider.integerValue)
+                cell.tick(adjustment: slider.doubleValue)
             }
         }
     }
