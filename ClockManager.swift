@@ -20,7 +20,9 @@ class ClockManager {
                 clocks = try context.fetch(dataFetchRequest) as! [Clock]
             }catch{}
         }
-        return clocks
+        return clocks.sorted { (c1, c2) -> Bool in
+            c1.position < c2.position
+        }
     }
     
     static func addClock(abbreviation:String, displayName:String, position:Int){

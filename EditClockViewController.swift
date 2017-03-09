@@ -22,9 +22,6 @@ class EditClockViewController: NSViewController, NSTableViewDelegate, NSTableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         clocks = ClockManager.getClocks()
-        clocks.sort { (c1, c2) -> Bool in
-            c1.position < c2.position
-        }
         timezoneSelector.removeAllItems()
         for (key,value) in TimeZone.abbreviationDictionary {
             timezoneSelector.addItem(withTitle: "\(key) - \(value)")
@@ -32,15 +29,13 @@ class EditClockViewController: NSViewController, NSTableViewDelegate, NSTableVie
     }
     
     override func viewDidAppear() {
-        self.view.window?.title = "Edit Clocks"
+        self.view.window?.title = "Preferences"
     }
     
     func refresh(){
         popoverView?.reloadClocks()
         clocks = ClockManager.getClocks()
-        clocks.sort { (c1, c2) -> Bool in
-            c1.position < c2.position
-        }
+
         tableView.reloadData()
         
     }

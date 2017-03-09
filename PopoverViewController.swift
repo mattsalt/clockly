@@ -22,12 +22,9 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         clocks = ClockManager.getClocks()
-        clocks.sort { (c1, c2) -> Bool in
-            c1.position < c2.position
-        }
         tableview.backgroundColor = NSColor.white
         meenu = NSMenu()
-        meenu?.addItem(NSMenuItem(title: "Edit Clocks",action: #selector(editClocks), keyEquivalent: ","))
+        meenu?.addItem(NSMenuItem(title: "Preferences",action: #selector(editClocks), keyEquivalent: ","))
         meenu?.addItem(NSMenuItem(title: "Quit Clockly",action: #selector(quit), keyEquivalent: "q"))
         editButton.menu = meenu
         tick()
@@ -47,9 +44,6 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
     
     func reloadClocks(){
         clocks = ClockManager.getClocks()
-        clocks.sort { (c1, c2) -> Bool in
-            c1.position < c2.position
-        }
         tableview.reloadData()
     }
     
