@@ -22,6 +22,9 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         clocks = ClockManager.getClocks()
+        clocks.sort { (c1, c2) -> Bool in
+            c1.position < c2.position
+        }
         tableview.backgroundColor = NSColor.white
         meenu = NSMenu()
         meenu?.addItem(NSMenuItem(title: "Edit Clocks",action: #selector(editClocks), keyEquivalent: ","))
@@ -41,9 +44,17 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
     @IBAction func editButtonClicked(_ sender: Any) {
         meenu?.popUp(positioning: meenu?.item(at: 0), at: NSEvent.mouseLocation(), in: nil)
     }
+    
     func reloadClocks(){
         clocks = ClockManager.getClocks()
+        clocks.sort { (c1, c2) -> Bool in
+            c1.position < c2.position
+        }
         tableview.reloadData()
+    }
+    
+    @IBAction func sliderChanged(_ sender: Any) {
+        tick()
     }
     
     // TURN THE TIMER ON AND OFF
@@ -67,9 +78,15 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
         }
     }
     
-    @IBAction func sliderChanged(_ sender: Any) {
-        tick()
+    //MARK: Menu methods
+    func editClocks(){
+        performSegue(withIdentifier: "showEditWindow", sender: self)
     }
+    
+    func quit(){
+        NSApplication.shared().terminate(self)
+    }
+    
     //MARK: TABLE METHODS
     func numberOfRows(in tableView: NSTableView) -> Int {
         return clocks.count
@@ -86,11 +103,6 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
         cell?.displayName = clock.displayName!
         return cell
     }
-    func editClocks(){
-        performSegue(withIdentifier: "showEditWindow", sender: self)
-    }
     
-    func quit(){
-        NSApplication.shared().terminate(self)
-    }
+
 }

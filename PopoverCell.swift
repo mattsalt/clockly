@@ -32,17 +32,16 @@ class PopoverCell: NSTableCellView {
         descriptionLabel.textColor = NSColor.black
         dayLabel.textColor = NSColor.lightGray
         
-        let date = Date()
-        timeLabel.stringValue = dateFormatter.string(from: date)
+        tick(adjustment:0.0)
         abbreviationLabel.stringValue = dateFormatter.timeZone.abbreviation()!
         descriptionLabel.stringValue = displayName
     }
     
     func tick(adjustment: Double){
-        var date = Date()
         let timeInterval:TimeInterval = adjustment * 60.0 * 60.0
-        date = date.addingTimeInterval(timeInterval)
+        let date = Date().addingTimeInterval(timeInterval)
         timeLabel.stringValue = dateFormatter.string(from: date)
+        
         var calendar = Calendar.current
         calendar.timeZone = timezone!
         let day = calendar.component(.weekday, from: date)

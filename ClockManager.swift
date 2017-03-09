@@ -23,11 +23,12 @@ class ClockManager {
         return clocks
     }
     
-    static func addClock(abbreviation:String, displayName:String){
+    static func addClock(abbreviation:String, displayName:String, position:Int){
         if let context = (NSApplication.shared().delegate as? AppDelegate)?.managedObjectContext {
             let clock = Clock(context: context)
             clock.displayName = displayName
             clock.abbreviation = abbreviation
+            clock.position = Int32(position)
             (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
         }
     }

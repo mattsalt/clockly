@@ -3,8 +3,9 @@
     <entity name="Clock" representedClassName="Clock" syncable="YES" codeGenerationType="class">
         <attribute name="abbreviation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Clock" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Clock" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>
