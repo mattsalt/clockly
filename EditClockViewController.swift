@@ -84,6 +84,9 @@ class EditClockViewController: NSViewController, NSTableViewDelegate, NSTableVie
     
     //MARK: Sorting
     @IBAction func upClicked(_ sender: Any) {
+        if(tableView.selectedRow < 0 ){
+            return
+        }
         //If top row selected do nothing
         if(tableView.selectedRow == 0){
             return
@@ -103,6 +106,9 @@ class EditClockViewController: NSViewController, NSTableViewDelegate, NSTableVie
     }
     
     @IBAction func downClicked(_ sender: Any) {
+        if(tableView.selectedRow < 0 ){
+            return
+        }
         //If bottom row selected do nothing
         if(tableView.selectedRow == clocks.count - 1){
             return
