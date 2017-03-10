@@ -799,7 +799,7 @@
                                     <slider verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwO-wC-z75">
                                         <rect key="frame" x="4" y="14" width="115" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <sliderCell key="cell" state="on" alignment="left" minValue="-12" maxValue="12" tickMarkPosition="above" numberOfTickMarks="3" sliderType="linear" id="5N6-fy-nhp">
+                                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="-12" maxValue="12" tickMarkPosition="above" numberOfTickMarks="3" sliderType="linear" id="5N6-fy-nhp">
                                             <connections>
                                                 <action selector="sliderChanged:" target="aNp-Vz-uKk" id="roP-2b-ds9"/>
                                             </connections>
