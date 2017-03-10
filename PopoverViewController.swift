@@ -30,7 +30,17 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
         tick()
     }
     
-    func tick(){        
+    override func viewDidAppear() {
+        startTimer()
+    }
+    
+    override func viewWillDisappear() {
+        stopTimer()
+    }
+
+    
+    func tick(){
+        print("tick")
         for (index, _) in clocks.enumerated() {
             if let cell = tableview.view(atColumn: 0, row: index, makeIfNecessary: false) as? PopoverCell{
                 cell.tick(adjustment: slider.doubleValue)
@@ -55,11 +65,12 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
     // TURN THE TIMER ON AND OFF
     func startTimer(){
         tick()
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
     }
     
     func stopTimer(){
         timer?.invalidate()
+        timer = nil
     }
     
     //MARK: NAVIGATION

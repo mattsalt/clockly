@@ -32,15 +32,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func togglePopover(sender: AnyObject) {
         if popover.isShown{
-            (self.popover.contentViewController as! PopoverViewController).stopTimer()
             popover.performClose(sender)
         }else{
             if let button = statusItem.button {
                 popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
-                (self.popover.contentViewController as! PopoverViewController).startTimer()
+//                (self.popover.contentViewController as! PopoverViewController).startTimer()
                 NSEvent.addGlobalMonitorForEvents(matching: .leftMouseDown, handler: { (mouseEvent: NSEvent?)
                     in
-                    (self.popover.contentViewController as! PopoverViewController).stopTimer()
                     self.popover.performClose(sender)
                 })
                 
