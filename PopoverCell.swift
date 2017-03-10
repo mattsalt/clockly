@@ -21,10 +21,12 @@ class PopoverCell: NSTableCellView {
     var displayName = ""
     var dateFormatter = DateFormatter()
     var dateFormatter2 = DateFormatter()
+    var showDay = false
+    var showSeconds = false
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-        dateFormatter.timeStyle = DateFormatter.Style.medium
+        dateFormatter.timeStyle = showSeconds ? DateFormatter.Style.medium : DateFormatter.Style.short
         dateFormatter.timeZone = timezone
         
         timeLabel.textColor = NSColor.black
@@ -35,16 +37,17 @@ class PopoverCell: NSTableCellView {
         tick(adjustment:0.0)
         abbreviationLabel.stringValue = dateFormatter.timeZone.abbreviation()!
         descriptionLabel.stringValue = displayName
+        
+        dayLabel.isHidden = showDay ? false : true
     }
     
     func tick(adjustment: Double){
         let timeInterval:TimeInterval = adjustment * 60.0 * 60.0
         let date = Date().addingTimeInterval(timeInterval)
         timeLabel.stringValue = dateFormatter.string(from: date)
-        
         var calendar = Calendar.current
         calendar.timeZone = timezone!
         let day = calendar.component(.weekday, from: date)
-        dayLabel.stringValue = days[day]
+        dayLabel.stringValue = days[day-1]
     }
 }

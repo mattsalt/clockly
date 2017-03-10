@@ -10,7 +10,6 @@
 		340685421E6F2B5600B4396C /* EditClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340685411E6F2B5600B4396C /* EditClockViewController.swift */; };
 		341721BA1E705D08000FC454 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341721B91E705D08000FC454 /* TestView.swift */; };
 		341993E21E695FB6005274BD /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 341993D91E695FB6005274BD /* Model.xcdatamodeld */; };
-		341993E31E695FB6005274BD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 341993DB1E695FB6005274BD /* Info.plist */; };
 		341993E71E695FB6005274BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 341993DF1E695FB6005274BD /* Assets.xcassets */; };
 		341993E81E695FB6005274BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341993E01E695FB6005274BD /* AppDelegate.swift */; };
 		341993EC1E696023005274BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 341993EA1E696023005274BD /* Main.storyboard */; };
@@ -156,7 +155,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				341993EC1E696023005274BD /* Main.storyboard in Resources */,
-				341993E31E695FB6005274BD /* Info.plist in Resources */,
 				341993E71E695FB6005274BD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,11 +16,11 @@ class PopoverBackgroundView: NSView {
         super.draw(dirtyRect)
     }
     override func viewDidMoveToWindow() {
-        
-        guard let frameView = window?.contentView?.superview else {
-            return
-        }
 //        
+//        guard let frameView = window?.contentView?.superview else {
+//            return
+//        }
+////        
 //        let backgroundView = NSView(frame: frameView.bounds)
 //        backgroundView.wantsLayer = true
 //        backgroundView.layer?.backgroundColor = CGColor.init(gray: 0.75, alpha: 1.0) // colour of your choice

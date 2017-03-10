@@ -699,10 +699,10 @@
                                                             <rect key="frame" x="1" y="1" width="159" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NrM-tv-ddK">
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NrM-tv-ddK">
                                                                     <rect key="frame" x="73" y="3" width="80" height="13"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="120" id="SzK-LS-uoy"/>
+                                                                        <constraint firstAttribute="width" constant="76" id="SzK-LS-uoy"/>
                                                                     </constraints>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Label" id="h5f-FJ-zbq">
                                                                         <font key="font" metaFont="system" size="10"/>
@@ -839,7 +839,7 @@
             <objects>
                 <viewController showSeguePresentationStyle="single" id="8mZ-Fr-puX" customClass="EditClockViewController" customModule="Clockly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="eJI-XF-Jqx">
-                        <rect key="frame" x="0.0" y="0.0" width="486" height="196"/>
+                        <rect key="frame" x="0.0" y="0.0" width="514" height="196"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7J-R8-C7F">
@@ -946,9 +946,9 @@
                                 </tableHeaderView>
                             </scrollView>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pv7-9q-wv3">
-                                <rect key="frame" x="268" y="152" width="201" height="26"/>
+                                <rect key="frame" x="282" y="152" width="215" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="196" id="GyX-S9-ogK"/>
+                                    <constraint firstAttribute="width" constant="210" id="GyX-S9-ogK"/>
                                     <constraint firstAttribute="height" constant="21" id="TxU-ON-ydv"/>
                                 </constraints>
                                 <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="avy-xT-Bbr" id="O4m-fb-K0Z">
@@ -964,7 +964,7 @@
                                 </popUpButtonCell>
                             </popUpButton>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gmx-gL-CeO">
-                                <rect key="frame" x="270" y="113" width="196" height="22"/>
+                                <rect key="frame" x="284" y="113" width="210" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="ais-Gw-Xyl"/>
                                 </constraints>
@@ -975,7 +975,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bgf-il-dMH">
-                                <rect key="frame" x="264" y="65" width="65" height="32"/>
+                                <rect key="frame" x="278" y="65" width="65" height="32"/>
                                 <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LE9-zu-DPN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -984,8 +984,30 @@
                                     <action selector="addClicked:" target="8mZ-Fr-puX" id="7hl-OH-HHh"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aH5-Dx-ANf">
+                                <rect key="frame" x="252" y="155" width="13" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PkI-CT-OP9">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="upClicked:" target="8mZ-Fr-puX" id="Iq8-Ok-zwB"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NTk-7U-mgb">
+                                <rect key="frame" x="252" y="134" width="13" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OgA-Nc-ZXl">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="downClicked:" target="8mZ-Fr-puX" id="IIH-Ai-iD9"/>
+                                </connections>
+                            </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gNZ-C9-CXc">
-                                <rect key="frame" x="383" y="65" width="89" height="32"/>
+                                <rect key="frame" x="411" y="65" width="89" height="32"/>
                                 <buttonCell key="cell" type="push" title="Remove" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zdX-96-bQm">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -994,14 +1016,36 @@
                                     <action selector="removeClicked:" target="8mZ-Fr-puX" id="3XD-tZ-Ux6"/>
                                 </connections>
                             </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EvU-vx-KFb">
+                                <rect key="frame" x="276" y="36" width="169" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Show time with seconds" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="vw9-MP-VsT">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="showSecondsToggled:" target="8mZ-Fr-puX" id="8Lm-Mm-jfG"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T8c-AP-sAb">
+                                <rect key="frame" x="276" y="10" width="132" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Show day of week" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Gwc-tU-ec6">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="showDayToggled:" target="8mZ-Fr-puX" id="TZ9-Ch-hHI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="gNZ-C9-CXc" firstAttribute="top" secondItem="Gmx-gL-CeO" secondAttribute="bottom" constant="20" id="1jI-6E-4h9"/>
                             <constraint firstItem="M7J-R8-C7F" firstAttribute="leading" secondItem="eJI-XF-Jqx" secondAttribute="leading" constant="20" id="88J-PY-460"/>
                             <constraint firstAttribute="trailing" secondItem="Gmx-gL-CeO" secondAttribute="trailing" constant="20" id="9oX-Vh-YsO"/>
-                            <constraint firstItem="Pv7-9q-wv3" firstAttribute="leading" secondItem="M7J-R8-C7F" secondAttribute="trailing" constant="20" id="FKh-aM-K2q"/>
-                            <constraint firstItem="Gmx-gL-CeO" firstAttribute="leading" secondItem="M7J-R8-C7F" secondAttribute="trailing" constant="20" id="UQh-m5-ToP"/>
-                            <constraint firstItem="bgf-il-dMH" firstAttribute="leading" secondItem="M7J-R8-C7F" secondAttribute="trailing" constant="20" id="YKJ-WQ-7jI"/>
+                            <constraint firstItem="Pv7-9q-wv3" firstAttribute="leading" secondItem="M7J-R8-C7F" secondAttribute="trailing" constant="34" id="FKh-aM-K2q"/>
+                            <constraint firstItem="Gmx-gL-CeO" firstAttribute="leading" secondItem="M7J-R8-C7F" secondAttribute="trailing" constant="34" id="UQh-m5-ToP"/>
+                            <constraint firstItem="bgf-il-dMH" firstAttribute="leading" secondItem="M7J-R8-C7F" secondAttribute="trailing" constant="34" id="YKJ-WQ-7jI"/>
                             <constraint firstAttribute="bottom" secondItem="M7J-R8-C7F" secondAttribute="bottom" constant="20" id="Z6F-Tw-jLI"/>
                             <constraint firstItem="Gmx-gL-CeO" firstAttribute="top" secondItem="Pv7-9q-wv3" secondAttribute="bottom" constant="20" id="hPb-VM-YGe"/>
                             <constraint firstItem="bgf-il-dMH" firstAttribute="top" secondItem="Gmx-gL-CeO" secondAttribute="bottom" constant="20" id="iqe-Ms-0hS"/>
@@ -1014,16 +1058,20 @@
                         <outlet property="addButton" destination="bgf-il-dMH" id="zxP-m7-nGB"/>
                         <outlet property="displayNameField" destination="Gmx-gL-CeO" id="qH9-7u-vJu"/>
                         <outlet property="removeButton" destination="gNZ-C9-CXc" id="6of-so-Pye"/>
+                        <outlet property="showDaysOfTheWeekCheckBox" destination="T8c-AP-sAb" id="1WE-cw-YOj"/>
+                        <outlet property="showTimeWithSecondsCheckBox" destination="EvU-vx-KFb" id="d3I-Cn-iEl"/>
                         <outlet property="tableView" destination="myi-zW-0SZ" id="5IR-8X-gJE"/>
                         <outlet property="timezoneSelector" destination="Pv7-9q-wv3" id="xyS-wc-S7V"/>
                     </connections>
                 </viewController>
                 <customObject id="5fC-oD-2rj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="322" y="823"/>
+            <point key="canvasLocation" x="336" y="823"/>
         </scene>
     </scenes>
     <resources>
+        <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="NSRemoveTemplate" width="11" height="11"/>
         <image name="settings-64" width="384" height="384"/>
     </resources>
 </document>

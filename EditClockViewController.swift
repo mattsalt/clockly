@@ -16,11 +16,18 @@ class EditClockViewController: NSViewController, NSTableViewDelegate, NSTableVie
     @IBOutlet weak var addButton: NSButton!
     @IBOutlet weak var removeButton: NSButton!
     
+    @IBOutlet weak var showTimeWithSecondsCheckBox: NSButton!
+    @IBOutlet weak var showDaysOfTheWeekCheckBox: NSButton!
+   
     var popoverView:PopoverViewController?
     var clocks:[Clock] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let defaults = UserDefaults.standard
+        showDaysOfTheWeekCheckBox.state = defaults.integer(forKey: "showDay")
+        showTimeWithSecondsCheckBox.state = defaults.integer(forKey: "showSeconds")
+
         clocks = ClockManager.getClocks()
         timezoneSelector.removeAllItems()
         for (key,value) in TimeZone.abbreviationDictionary {
@@ -35,17 +42,19 @@ class EditClockViewController: NSViewController, NSTableViewDelegate, NSTableVie
     func refresh(){
         popoverView?.reloadClocks()
         clocks = ClockManager.getClocks()
-
         tableView.reloadData()
         
     }
     
     @IBAction func addClicked(_ sender: Any) {
+        print(clocks.count)
         if let zone = timezoneSelector.titleOfSelectedItem?.components(separatedBy: " - ")[0]{
-            ClockManager.addClock(abbreviation: zone, displayName: displayNameField.stringValue, position:tableView.numberOfRows)
+            ClockManager.addClock(abbreviation: zone, displayName: displayNameField.stringValue, position:clocks.count)
         }
         clocks = ClockManager.getClocks()
-        
+        for item in clocks{
+            print("\(item.displayName) - \(item.position)")
+        }
         displayNameField.stringValue = ""
         refresh()
     }
@@ -57,6 +66,60 @@ class EditClockViewController: NSViewController, NSTableViewDelegate, NSTableVie
                 refresh()
             }
         }
+    }
+    
+    //MARK: Preferences
+    
+    @IBAction func showSecondsToggled(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        defaults.set(showTimeWithSecondsCheckBox.state, forKey: "showSeconds")
+        refresh()
+    }
+    
+    @IBAction func showDayToggled(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        defaults.set(showDaysOfTheWeekCheckBox.state, forKey: "showDay")
+        refresh()
+    }
+    
+    //MARK: Sorting
+    @IBAction func upClicked(_ sender: Any) {
+        //If top row selected do nothing
+        if(tableView.selectedRow == 0){
+            return
+        }
+        
+        let selected = clocks.remove(at: tableView.selectedRow)
+        selected.position = Int32(tableView.selectedRow - 1)
+        clocks.insert(selected, at: Int(selected.position))
+        
+        for (index,clock) in clocks.enumerated(){
+            clock.position = Int32(index)
+        }
+        
+        (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
+        refresh()
+        tableView.selectRowIndexes([Int(selected.position)], byExtendingSelection: false)
+    }
+    
+    @IBAction func downClicked(_ sender: Any) {
+        //If bottom row selected do nothing
+        if(tableView.selectedRow == clocks.count - 1){
+            return
+        }
+        
+        let selected = clocks.remove(at: tableView.selectedRow)
+        selected.position = Int32(tableView.selectedRow + 1)
+        clocks.insert(selected, at: Int(selected.position))
+        
+        for (index,clock) in clocks.enumerated(){
+            clock.position = Int32(index)
+        }
+        refresh()
+        (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
+
+        tableView.selectRowIndexes([Int(selected.position)], byExtendingSelection: false)
+
     }
     
     //MARK: Table Methods

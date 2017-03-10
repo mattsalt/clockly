@@ -51,6 +51,7 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
         tick()
     }
     
+    
     // TURN THE TIMER ON AND OFF
     func startTimer(){
         tick()
@@ -91,10 +92,13 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        let defaults = UserDefaults.standard
         let cell = tableView.make(withIdentifier: "popCell", owner: self) as? PopoverCell
         let clock = clocks[row]
         cell?.timezone = TimeZone.init(abbreviation:clock.abbreviation!)
         cell?.displayName = clock.displayName!
+        cell?.showSeconds = defaults.integer(forKey: "showSeconds") == 1 ? true : false
+        cell?.showDay = defaults.integer(forKey: "showDay") == 1 ? true : false
         return cell
     }
     

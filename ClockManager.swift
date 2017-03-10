@@ -42,4 +42,9 @@ class ClockManager {
         }
     }
     
+    static func updateClockPosition(clock:Clock){
+        (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
+
+    }
+    
 }
