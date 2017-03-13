@@ -28,6 +28,7 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
         meenu?.addItem(NSMenuItem(title: "Quit Clockly",action: #selector(quit), keyEquivalent: "q"))
         editButton.menu = meenu
         tick()
+    
     }
     
     override func viewDidAppear() {
@@ -40,7 +41,6 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
 
     
     func tick(){
-        print("tick")
         for (index, _) in clocks.enumerated() {
             if let cell = tableview.view(atColumn: 0, row: index, makeIfNecessary: false) as? PopoverCell{
                 cell.tick(adjustment: slider.doubleValue)

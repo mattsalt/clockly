@@ -783,10 +783,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="159" height="47"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O0W-a9-Isq">
-                                        <rect key="frame" x="127" y="15" width="24" height="22"/>
+                                        <rect key="frame" x="129" y="12" width="20" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="6cV-q9-0og"/>
-                                            <constraint firstAttribute="height" constant="22" id="RAY-wi-PvW"/>
+                                            <constraint firstAttribute="width" constant="20" id="6cV-q9-0og"/>
+                                            <constraint firstAttribute="height" constant="20" id="RAY-wi-PvW"/>
                                         </constraints>
                                         <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="settings-64" imagePosition="only" alignment="center" transparent="YES" imageScaling="proportionallyDown" inset="2" id="Jsc-ka-Y0l">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -797,9 +797,9 @@
                                         </connections>
                                     </button>
                                     <slider verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwO-wC-z75">
-                                        <rect key="frame" x="4" y="14" width="115" height="24"/>
+                                        <rect key="frame" x="4" y="14" width="115" height="19"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="-12" maxValue="12" tickMarkPosition="above" numberOfTickMarks="3" sliderType="linear" id="5N6-fy-nhp">
+                                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="-12" maxValue="12" tickMarkPosition="above" sliderType="linear" id="5N6-fy-nhp">
                                             <connections>
                                                 <action selector="sliderChanged:" target="aNp-Vz-uKk" id="roP-2b-ds9"/>
                                             </connections>
@@ -807,8 +807,8 @@
                                     </slider>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="O0W-a9-Isq" secondAttribute="trailing" constant="8" id="Hw1-iK-rPS"/>
-                                    <constraint firstAttribute="bottom" secondItem="O0W-a9-Isq" secondAttribute="bottom" constant="15" id="aWa-Ue-vh2"/>
+                                    <constraint firstAttribute="trailing" secondItem="O0W-a9-Isq" secondAttribute="trailing" constant="10" id="Hw1-iK-rPS"/>
+                                    <constraint firstAttribute="bottom" secondItem="O0W-a9-Isq" secondAttribute="bottom" constant="12" id="aWa-Ue-vh2"/>
                                 </constraints>
                             </customView>
                         </subviews>
@@ -1066,7 +1066,7 @@
                 </viewController>
                 <customObject id="5fC-oD-2rj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="336" y="823"/>
+            <point key="canvasLocation" x="322" y="823"/>
         </scene>
     </scenes>
     <resources>
