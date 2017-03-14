@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PopoverViewController.swift"
-            timestampString = "511082605.583339"
+            filePath = "PopoverCell.swift"
+            timestampString = "511183055.359665"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "stopTimer()"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "draw(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PopoverViewController.swift"
-            timestampString = "511082605.583339"
+            filePath = "CustomSliderCell.swift"
+            timestampString = "511180782.611915"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "sliderChanged(_:)"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "drawBar(inside:flipped:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

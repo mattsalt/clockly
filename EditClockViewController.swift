@@ -19,6 +19,8 @@ class EditClockViewController: NSViewController, NSTableViewDelegate, NSTableVie
     @IBOutlet weak var showTimeWithSecondsCheckBox: NSButton!
     @IBOutlet weak var showDaysOfTheWeekCheckBox: NSButton!
    
+    @IBOutlet weak var analogDigitalControl: NSSegmentedControl!
+    
     var popoverView:PopoverViewController?
     var clocks:[Clock] = []
 
@@ -27,6 +29,7 @@ class EditClockViewController: NSViewController, NSTableViewDelegate, NSTableVie
         let defaults = UserDefaults.standard
         showDaysOfTheWeekCheckBox.state = defaults.integer(forKey: "showDay")
         showTimeWithSecondsCheckBox.state = defaults.integer(forKey: "showSeconds")
+        analogDigitalControl.selectSegment(withTag: defaults.integer(forKey: "analogDisplay" ))
 
         clocks = ClockManager.getClocks()
         timezoneSelector.removeAllItems()
@@ -71,16 +74,24 @@ class EditClockViewController: NSViewController, NSTableViewDelegate, NSTableVie
     //MARK: Preferences
     
     @IBAction func showSecondsToggled(_ sender: Any) {
-        let defaults = UserDefaults.standard
-        defaults.set(showTimeWithSecondsCheckBox.state, forKey: "showSeconds")
+        UserDefaults.standard.set(showTimeWithSecondsCheckBox.state, forKey: "showSeconds")
         refresh()
     }
     
     @IBAction func showDayToggled(_ sender: Any) {
-        let defaults = UserDefaults.standard
-        defaults.set(showDaysOfTheWeekCheckBox.state, forKey: "showDay")
+        UserDefaults.standard.set(showDaysOfTheWeekCheckBox.state, forKey: "showDay")
         refresh()
     }
+    
+    @IBAction func analogDigitalSwitched(_ sender: Any) {
+        if(analogDigitalControl.selectedSegment == 0){
+            UserDefaults.standard.set(0, forKey: "analogDisplay")
+        }else{
+            UserDefaults.standard.set(1, forKey: "analogDisplay")
+        }
+        refresh()
+    }
+    
     
     //MARK: Sorting
     @IBAction func upClicked(_ sender: Any) {

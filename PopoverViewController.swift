@@ -14,6 +14,10 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
 
     @IBOutlet weak var editButton: NSButton!
     @IBOutlet weak var slider: NSSlider!
+    @IBOutlet weak var minLabel: NSTextField!
+    @IBOutlet weak var adjustmentLabel: NSTextField!
+    @IBOutlet weak var maxLabel: NSTextField!
+    
     var clocks:[Clock] = []
     var timer:Timer?
     var popover:NSPopover?
@@ -27,8 +31,13 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
         meenu?.addItem(NSMenuItem(title: "Preferences",action: #selector(editClocks), keyEquivalent: ","))
         meenu?.addItem(NSMenuItem(title: "Quit Clockly",action: #selector(quit), keyEquivalent: "q"))
         editButton.menu = meenu
+        minLabel.textColor = NSColor.lightGray
+        maxLabel.textColor = NSColor.lightGray
+        maxLabel.backgroundColor = NSColor.white
+        minLabel.backgroundColor = NSColor.white
+        adjustmentLabel.backgroundColor = NSColor.white
+        adjustmentLabel.textColor = NSColor.lightGray
         tick()
-    
     }
     
     override func viewDidAppear() {
@@ -97,7 +106,7 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 50
+        return 60
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -106,8 +115,9 @@ class PopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewD
         let clock = clocks[row]
         cell?.timezone = TimeZone.init(abbreviation:clock.abbreviation!)
         cell?.displayName = clock.displayName!
-        cell?.showSeconds = defaults.integer(forKey: "showSeconds") == 1 ? true : false
-        cell?.showDay = defaults.integer(forKey: "showDay") == 1 ? true : false
+        cell?.showSeconds = defaults.integer(forKey: "showSeconds") == 1 
+        cell?.showDay = defaults.integer(forKey: "showDay") == 1
+        cell?.analog = defaults.integer(forKey: "analogDisplay") == 0
         return cell
     }
     
