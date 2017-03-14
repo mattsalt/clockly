@@ -17,6 +17,8 @@
 		3453692C1E6D563200F43AD1 /* PopoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3453692B1E6D563200F43AD1 /* PopoverCell.swift */; };
 		3453692E1E6DB3CA00F43AD1 /* ClockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3453692D1E6DB3CA00F43AD1 /* ClockManager.swift */; };
 		345369301E6DB72C00F43AD1 /* PopoverBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3453692F1E6DB72C00F43AD1 /* PopoverBackgroundView.swift */; };
+		34BB12D31E770F2700CB4E20 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BB12D21E770F2700CB4E20 /* ClockView.swift */; };
+		34BB12D51E77F70700CB4E20 /* CustomSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BB12D41E77F70700CB4E20 /* CustomSliderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		3453692B1E6D563200F43AD1 /* PopoverCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverCell.swift; sourceTree = "<group>"; };
 		3453692D1E6DB3CA00F43AD1 /* ClockManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockManager.swift; sourceTree = "<group>"; };
 		3453692F1E6DB72C00F43AD1 /* PopoverBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverBackgroundView.swift; sourceTree = "<group>"; };
+		34BB12D21E770F2700CB4E20 /* ClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		34BB12D41E77F70700CB4E20 /* CustomSliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSliderCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 			children = (
 				341993E01E695FB6005274BD /* AppDelegate.swift */,
 				341993EA1E696023005274BD /* Main.storyboard */,
+				34BB12D21E770F2700CB4E20 /* ClockView.swift */,
+				34BB12D41E77F70700CB4E20 /* CustomSliderCell.swift */,
 				345369341E6DF4A800F43AD1 /* Popover */,
 				345369331E6DF49A00F43AD1 /* Data */,
 				341993DF1E695FB6005274BD /* Assets.xcassets */,
@@ -169,10 +175,12 @@
 				345369301E6DB72C00F43AD1 /* PopoverBackgroundView.swift in Sources */,
 				340685421E6F2B5600B4396C /* EditClockViewController.swift in Sources */,
 				3453692C1E6D563200F43AD1 /* PopoverCell.swift in Sources */,
+				34BB12D51E77F70700CB4E20 /* CustomSliderCell.swift in Sources */,
 				341993E21E695FB6005274BD /* Model.xcdatamodeld in Sources */,
 				341721BA1E705D08000FC454 /* TestView.swift in Sources */,
 				3453692E1E6DB3CA00F43AD1 /* ClockManager.swift in Sources */,
 				3453692A1E6D554900F43AD1 /* PopoverViewController.swift in Sources */,
+				34BB12D31E770F2700CB4E20 /* ClockView.swift in Sources */,
 				341993E81E695FB6005274BD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
